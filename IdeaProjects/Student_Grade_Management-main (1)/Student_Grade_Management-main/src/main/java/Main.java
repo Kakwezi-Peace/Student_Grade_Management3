@@ -5,12 +5,15 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        // US-3: Validation & Creation
+
         StudentService studentService = new StudentService();
         StudentRepository repository = new StudentRepository();
         StudentProcessor processor = new StudentProcessor();
         StudentReportService reportService = new StudentReportService();
 
-        // Create students (US-3 validation)
+        // Create students (US-3)
         Student s1 = studentService.createStudent(
                 "ST301", "Peace", "Kakwezi",
                 "peace@gmail.com", "0781234567",
@@ -23,14 +26,35 @@ public class Main {
                 "CSC102", "2024-10-15", 45
         );
 
-        // Store students (US-4)
+
+        // US-4: Store Students
+
         if (s1 != null) repository.addStudent(s1);
         if (s2 != null) repository.addStudent(s2);
 
-        // Generate report (US-4)
+
+        // US-4: Manual Report
+
         reportService.printStudentReport(
                 repository.getAllStudents(),
                 processor
         );
+
+
+        // US-4 ADDITION: AUTOMATED SCHEDULER (NEW FEATURE)
+
+        SchedulerService scheduler = new SchedulerService(
+                repository,
+                processor,
+                reportService
+        );
+
+        scheduler.start();
+
+        // US-4: Proper shutdown on application exit
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            scheduler.shutdown();
+        }));
     }
 }
