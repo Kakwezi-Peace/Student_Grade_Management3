@@ -1,6 +1,6 @@
-package model;
+/*package model;
 
-public class RegularStudent extends Student {
+public class RegularStudent {
     private final double passingGrade = 50.0;
 
     public RegularStudent(String name, int age, String email, String phone) {
@@ -23,3 +23,5 @@ public class RegularStudent extends Student {
         return passingGrade;
     }
 }
+*/
+

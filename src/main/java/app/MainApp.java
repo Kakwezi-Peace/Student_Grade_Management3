@@ -1,19 +1,18 @@
-package app;
+//package app;
 
 import grade.GradeManager;
 import grade.Grade;
-import model.HonorsStudent;
-import model.RegularStudent;
+//import model.HonorsStudent;
+//import model.RegularStudent;
 import model.Subject;
 import model.CoreSubject;
 import model.ElectiveSubject;
-import model.Student;
 import service.*;
-import student.StudentManager;
+//import student.StudentManager;
 
 import java.io.File;
 import java.util.*;
-
+/*
 public class MainApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -438,3 +437,4 @@ private static void bulkImportFlow(Scanner sc, StudentManager sm, GradeManager g
         }
     }
 }
+*/
