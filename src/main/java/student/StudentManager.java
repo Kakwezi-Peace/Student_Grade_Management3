@@ -1,8 +1,8 @@
-package student;
+/*package student;
 
 import grade.GradeManager;
-import model.Student;
 import model.HonorsStudent;
+import model.Student;
 
 public class StudentManager {
     private final Student[] students = new Student[50];
@@ -37,12 +37,7 @@ public class StudentManager {
             System.out.printf("%s | %s | %s | %.1f%% | %s%n",
                     s.getStudentId(), s.getName(), s.getStudentType(), avg, status);
 
-            if (s instanceof HonorsStudent honors) {
-                System.out.printf("Enrolled Subjects: ? Passing | Grade: 60%% | Honors Eligible: %s%n",
-                        honors.checkHonorsEligibility(gradeManager) ? "Yes" : "No");
-            } else {
-                System.out.println("Enrolled Subjects: ? Passing | Grade: 50%");
-            }
+            System.out.println("Enrolled Subjects: ? Passing | Grade: 50%");
         }
         System.out.printf("Total Students: %d%n", getStudentCount());
         System.out.printf("Average Class Grade: %.1f%%%n", getAverageClassGrade(gradeManager));
@@ -75,3 +70,4 @@ public class StudentManager {
         return copy;
     }
 }
+*/

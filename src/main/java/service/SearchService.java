@@ -1,4 +1,4 @@
-package service;
+/*package service;
 
 import grade.GradeManager;
 import model.Student;
@@ -49,3 +49,4 @@ public class SearchService {
         return result;
     }
 }
+*/

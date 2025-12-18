@@ -1,9 +1,9 @@
-package model;
+/*package model;
 
 
 import grade.GradeManager;
 
-public class HonorsStudent extends Student {
+public class HonorsStudent {
     private final double passingGrade = 60.0;
 
     public HonorsStudent(String name, int age, String email, String phone) {
@@ -35,3 +35,4 @@ public class HonorsStudent extends Student {
         return 0;
     }
 }
+*/

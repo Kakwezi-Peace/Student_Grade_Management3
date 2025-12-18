@@ -1,7 +1,6 @@
-package service;
+/*package service;
 
 import grade.GradeManager;
-import model.Student;
 import student.StudentManager;
 
 import java.util.*;
@@ -94,3 +93,4 @@ public class StatisticsCalculator {
         return filtered.stream().mapToDouble(Double::doubleValue).toArray();
     }
 }
+*/
