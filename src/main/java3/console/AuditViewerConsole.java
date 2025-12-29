@@ -31,7 +31,7 @@ public class AuditViewerConsole {
             System.err.println("Error reading audit directory: " + e.getMessage());
             return;
         }
-
+//
         System.out.print("\nEnter log file to view (e.g., audit-YYYY-MM-DD.log): ");
         String fileName = sc.nextLine().trim();
         Path file = dir.resolve(fileName);
