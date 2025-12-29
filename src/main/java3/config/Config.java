@@ -7,7 +7,7 @@ public final class Config {
     private Config() {}
 
     public static final Charset UTF8 = StandardCharsets.UTF_8;
-
+// Data Json,csv,Binary
     public static final String DATA_CSV    = "./data/csv";
     public static final String DATA_JSON   = "./data/json";
     public static final String DATA_BINARY = "./data/binary";
