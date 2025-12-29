@@ -7,6 +7,7 @@ import java.nio.file.*;
 
 public class WatchServiceRunner implements Runnable {
     private volatile boolean running = true;
+// run method
 
     @Override
     public void run() {
