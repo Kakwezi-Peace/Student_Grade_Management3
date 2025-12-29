@@ -14,7 +14,7 @@ public class Student implements java.io.Serializable {
     private String type;                    // Regular | Honors
     private LocalDate enrollmentDate;
     private final LinkedList<Grade> gradeHistory = new LinkedList<>(); // US-1: LinkedList
-
+//
     public Student(String id, String name) {
         this.id = Objects.requireNonNull(id);
         this.name = Objects.requireNonNull(name);
