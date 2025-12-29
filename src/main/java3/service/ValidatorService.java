@@ -29,7 +29,7 @@ public class ValidatorService {
         ValidationResult r5 = ValidationUtils.validateDate(date);
         if (!r5.isValid()) return r5;
 
-        // Optional: validate type as either "Regular" or "Honors"
+        // Optional: validate type as either "Regular" or "Honors" type
         if (!("Regular".equalsIgnoreCase(type) || "Honors".equalsIgnoreCase(type))) {
             return ValidationResult.error(type, "Regular | Honors",
                     "VALIDATION ERROR: Invalid student type",
