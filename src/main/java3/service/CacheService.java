@@ -16,7 +16,7 @@ public class CacheService<K, V> {
             }
         };
     }
-
+// synchronization
     public synchronized void put(K key, V value) {
         lru.put(key, new CacheEntry<>(value, Instant.now()));
     }
