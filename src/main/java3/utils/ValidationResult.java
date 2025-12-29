@@ -19,6 +19,16 @@ public class ValidationResult {
     }
 
     public static ValidationResult error(String input, String expected, String message, List<String> examples) {
-        return new ValidationResult(false, message + "\nInput: " + input + "\nExpected: " + expected + "\nExamples: " + examples);
+        StringBuilder sb = new StringBuilder();
+        sb.append("❌ ").append(message).append("\n");
+        sb.append("Input: ").append(input).append("\n");
+        sb.append("Expected: ").append(expected).append("\n");
+        sb.append("Examples: ").append(String.join(", ", examples));
+        return new ValidationResult(false, sb.toString());
+    }
+
+    @Override
+    public String toString() {
+        return valid ? "✓ " + message : message;
     }
 }
