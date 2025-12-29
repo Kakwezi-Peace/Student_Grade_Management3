@@ -75,7 +75,7 @@ public class StudentService {
         }
         return out;
     }
-
+  // search by type
     public List<Student> searchByType(String type) {
         String t = type.toLowerCase();
         List<Student> out = new ArrayList<>();
