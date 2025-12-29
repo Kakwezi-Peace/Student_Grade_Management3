@@ -27,7 +27,7 @@ public class PatternSearchService {
         long end = System.currentTimeMillis();
         return new SearchResult(matches, students.size(), end - start);
     }
-
+// serach by name regex
     public SearchResult searchByNameRegex(List<Student> students, String nameRegex) {
         long start = System.currentTimeMillis();
         Pattern p = Pattern.compile(nameRegex, Pattern.CASE_INSENSITIVE);
