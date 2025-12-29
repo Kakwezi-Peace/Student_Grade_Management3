@@ -1,3 +1,222 @@
+Student Grade Management System – Lab 3 
+Overview
+
+This project is a console-based Student Grade Management System developed in Java.
+It implements advanced features across multiple user stories (US‑1 to US‑10), including:
+
+Student management with regex validation
+
+Multi-format file operations using NIO.2
+
+Concurrent batch report generation
+
+Real-time statistics dashboard
+
+Advanced search and query features
+
+Scheduled tasks, caching, and audit trail logging
+
+The system is designed with modular architecture, Git workflow best practices.
+
+* Features Implemented (User Stories)
+US‑1: LinkedList Grade History
+Each student maintains a LinkedList of grades.
+
+Supports efficient grade insertion and history traversal.
+
+US‑2: Multi-Format File Operations with NIO.2
+Export/import in CSV, JSON, Binary formats.
+
+Uses java.nio.file.Files and Path for all operations.
+
+Streaming for large CSV files (line-by-line, not full memory load).
+
+UTF‑8 encoding enforced.
+
+Separate directories:
+
+Code
+./data/csv
+./data/json
+./data/binary
+./data/import
+./data/cache
+./data/audit
+./reports/csv
+./reports/json
+./reports/binary
+
+WatchService detects new files in ./data/import.
+
+US‑3: Regex Input Validation
+Validates Student ID, Name, Email, Phone, Date with precompiled regex patterns.
+
+Clear error messages with examples.
+
+Integrated into AddStudentConsole.
+
+US‑4: Concurrent Batch Report Generation
+Uses FixedThreadPool for parallel report generation.
+
+Outputs timing and throughput metrics.
+
+Thread-safe caching of reports.
+
+US‑5: Advanced Stream Analytics
+Parallel streams for statistics (average GPA, grade distribution).
+
+Performance benchmarks included.
+
+US‑6: Pattern-Based Search
+Regex-based search for students and grades.
+
+Supports flexible queries (e.g., names, course codes).
+
+US‑7: Scheduled Tasks
+Automated tasks (e.g., nightly report generation).
+
+Uses ScheduledExecutorService.
+
+US‑8: Caching System & Audit Trail
+Cache layer for frequently accessed reports.
+
+Audit trail logs stored in ./data/audit.
+
+US-9: Concurrent Audit Trail
+
+US-10:Stream-Based Data processing
+
+
+ How to Run
+Compile the project  
+In IntelliJ: Build → Build Project.
+
+Run Main  
+Right‑click Main.java → Run.
+
+Main Menu  
+You’ll see:
+
+Code
+STUDENT GRADE MANAGEMENT - MAIN MENU
+
+...
+1. Add Student (with validation)
+2. View Students
+...
+5. Export Grade Report (CSV/JSON/Binary)
+6. Import Data (Multi-format support) [ENHANCED]
+...
+10. Real-Time Statistics Dashboard [NEW]
+...
+18. Audit Trail Viewer [NEW]
+19. Exit
+Test features
+
+Add students with valid/invalid inputs (US‑3).
+
+Export/import reports (US‑2).
+
+Generate batch reports (US‑4).
+
+Run analytics and dashboard (US‑5).
+
+Search with regex (US‑6).
+
+Schedule tasks (US‑7).
+
+View cache and audit logs (US‑8).
+
+ Testing & Verification
+Validation: Enter invalid emails, phone numbers, IDs → error messages with examples.
+
+File Ops: Export/import CSV/JSON/Binary → check file size and time metrics.
+
+Concurrency: Generate batch reports → verify parallel execution and timing.
+
+WatchService: Drop a file into ./data/import → auto-detection and import.
+
+Audit Trail: Check ./data/audit for logs.
+
+Cache: Verify cached GPA reports.
+
+* Git Workflow Requirements
+Branch strategy:
+
+main (protected)
+
+develop
+
+feature/* branches for each user story (e.g., feature/nio2-file-operations).
+
+Commit requirements:
+
+≥30 meaningful commits.
+
+Conventional commit format:
+
+feat(nio2): add streaming CSV reader
+
+fix(regex): correct phone pattern
+
+test(concurrent): add thread-safety tests
+
+Workflow steps:
+
+Create feature branch from develop.
+
+Implement feature with ≥3 commits.
+
+Merge develop into feature branch regularly.
+
+Open PR → review → merge into develop.
+
+Tag release after merging into main:
+
+Code
+git commit -m "Lab 3: Advanced Features & Concurrency"
+git push origin 
+
+Screenshots Checklist
+Main Menu
+
+Add Student (valid + invalid)
+
+View Students
+
+Export CSV/JSON/Binary (with size/time)
+
+Import CSV/JSON/Binary (with size/time)
+
+Bulk Import Grades
+
+GPA calculation
+
+Class statistics
+
+Real-time dashboard
+
+Batch reports
+
+Advanced search
+
+Pattern-based search
+
+Query grade history
+
+Scheduled tasks
+
+System performance
+
+Cache management
+
+Audit trail viewer
+
+Exit
+
+
+
+
 <img width="1919" height="941" alt="Screenshot 2025-12-29 192609" src="https://github.com/user-attachments/assets/ac9b4ca6-1b38-403e-96c4-0ce12cf64147" />
 <img width="1913" height="893" alt="Screenshot 2025-12-29 192454" src="https://github.com/user-attachments/assets/7adb0c94-ab67-428d-9950-4bbc57fd632f" />
 <img width="1862" height="860" alt="Screenshot 2025-12-29 192319" src="https://github.com/user-attachments/assets/6eeebd04-5fbb-46a8-bc59-ee1758288a5e" />
