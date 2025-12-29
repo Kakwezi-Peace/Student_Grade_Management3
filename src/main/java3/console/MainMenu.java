@@ -20,6 +20,7 @@ public class MainMenu {
         System.out.println("  6. Import Data (Multi-format support)     [ENHANCED]");
         System.out.println("  7. Bulk Import Grades");
         System.out.println();
+        //reporting
         System.out.println("ANALYTICS & REPORTING");
         System.out.println("  8. Calculate Student GPA");
         System.out.println("  9. View Class Statistics");
