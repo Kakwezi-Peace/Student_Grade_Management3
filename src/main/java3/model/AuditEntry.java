@@ -23,7 +23,7 @@ public class AuditEntry implements java.io.Serializable {
         this.executionMs = executionMs;
         this.success = success;
     }
-
+// getters
     public Instant getTimestamp() { return timestamp; }
     public String getThreadId() { return threadId; }
     public String getOperation() { return operation; }
