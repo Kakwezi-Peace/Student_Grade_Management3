@@ -19,7 +19,7 @@ public class PatternSearchConsole {
     private static void accept(Student s) {
         System.out.printf("%s | %s | %s%n", s.getId(), s.getName(), s.getEmail());
     }
-
+//
     public void run(Scanner sc) {
         List<Student> all = new ArrayList<Student>((Collection<? extends Student>) studentService.listAll());
         System.out.println("\nPATTERN-BASED SEARCH");
