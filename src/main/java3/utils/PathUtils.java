@@ -29,4 +29,10 @@ public final class PathUtils {
         ensureDir(Config.AUDIT_DIR);
         ensureDir(Config.CACHE_DIR);
     }
+
+    // Support relative or absolute paths
+    public static Path resolve(Path baseDir, String userInput) {
+        Path candidate = Path.of(userInput);
+        return candidate.isAbsolute() ? candidate : baseDir.resolve(candidate).normalize();
+    }
 }
