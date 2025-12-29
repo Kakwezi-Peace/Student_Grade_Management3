@@ -20,7 +20,7 @@ public class ScheduledTasksConsole {
         this.studentService = studentService;
         this.reportService = reportService;
     }
-
+// out printing
     public void run(Scanner sc) {
         System.out.println("\nSCHEDULE AUTOMATED TASKS");
         System.out.println("1. Daily GPA Recalculation");
