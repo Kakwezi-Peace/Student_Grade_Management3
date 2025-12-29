@@ -24,7 +24,7 @@ public class SchedulerService {
         long oneWeek = TimeUnit.DAYS.toSeconds(7);
         scheduler.scheduleAtFixedRate(task, oneWeek, oneWeek, TimeUnit.SECONDS);
     }
-
+// shutdown
     public void shutdown() { scheduler.shutdown(); }
 
     private long computeInitialDelay(int hour, int minute) {
