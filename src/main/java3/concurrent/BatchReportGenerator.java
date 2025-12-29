@@ -13,7 +13,7 @@ public class BatchReportGenerator {
     public BatchReportGenerator(int threads) {
         this.executor = ExecutorsConfig.fixedPool(threads);
     }
-
+// generate reports methods
     public void generateReports(List<Student> students, ReportService reportService) {
         long start = System.currentTimeMillis();
         List<Future<String>> futures = new ArrayList<>();
