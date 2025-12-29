@@ -8,7 +8,7 @@ public class Course implements java.io.Serializable {
         this.code = code;
         this.name = name;
     }
-
+//getters
     public String getCode() { return code; }
     public String getName() { return name; }
 }
