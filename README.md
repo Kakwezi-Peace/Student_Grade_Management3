@@ -1,4 +1,4 @@
-Student Grade Management System – Lab 3 
+#Student Grade Management System – Lab 3 
 Overview
 
 This project is a console-based Student Grade Management System developed in Java.
