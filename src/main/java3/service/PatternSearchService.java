@@ -51,7 +51,7 @@ public class PatternSearchService {
 
         return new search.SearchResult(matches, students.size(), end - start);
     }
-
+// search keyword
     public search.SearchResult searchByNameRegex(List<Student> students, String nameRegex) {
         long start = System.currentTimeMillis();
         Pattern p = Pattern.compile(nameRegex, Pattern.CASE_INSENSITIVE);
