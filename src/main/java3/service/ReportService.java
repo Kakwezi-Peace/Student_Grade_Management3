@@ -22,28 +22,39 @@ public class ReportService {
         this.auditService = null;
     }
 
-    // Build a simple report for a student
-    public Report buildReport(Student s) {
-        double avg = s.getGradeHistory().stream()
+    // ✅ Public method returning a Report object
+    public Report generateReport(Student student) {
+        return buildReport(student);
+    }
+
+    // ✅ Public method returning a String summary
+    public String generateReportAsString(Student student) {
+        Report report = buildReport(student);
+        return report.toString(); // relies on Report.toString()
+    }
+
+    // ✅ Build a simple report for a student
+    public Report buildReport(Student student) {
+        double avg = student.getGradeHistory().stream()
                 .mapToInt(g -> g.getScore())
                 .average().orElse(0.0);
-        double gpa = avg / 25.0;
-        return new Report(s, s.getGradeHistory(), gpa);
+        double gpa = avg / 25.0; // simple GPA proxy
+        return new Report(student, student.getGradeHistory(), gpa);
     }
 
-    // Build a more detailed report (if you want to distinguish)
-    public Report buildDetailedReport(Student s) {
-        return buildReport(s); // for now, same as buildReport
+    // Build a more detailed report (currently same as buildReport)
+    public Report buildDetailedReport(Student student) {
+        return buildReport(student);
     }
 
-    // ✅ Combined export method (CSV, JSON, Binary) with audit logging
-    public void generateAllFormats(Student s, Report r, String baseFilename) throws Exception {
+    // Combined export method (CSV, JSON, Binary) with audit logging
+    public void generateAllFormats(Student student, Report report, String baseFilename) throws Exception {
         long start = System.currentTimeMillis();
         boolean success = false;
 
-        Path csv = fileService.exportCsv(baseFilename, r);
-        Path json = fileService.exportJson(baseFilename, r);
-        Path bin = fileService.exportBinary(baseFilename, r);
+        Path csv = fileService.exportCsv(baseFilename, report);
+        Path json = fileService.exportJson(baseFilename, report);
+        Path bin = fileService.exportBinary(baseFilename, report);
         success = true;
 
         long end = System.currentTimeMillis();
@@ -53,7 +64,7 @@ public class ReportService {
                     Instant.now(),
                     Thread.currentThread().getName(),
                     "GENERATE_REPORT",
-                    "Generated all formats for " + s.getId(),
+                    "Generated all formats for " + student.getId(),
                     end - start,
                     success));
         }
@@ -65,14 +76,14 @@ public class ReportService {
     }
 
     // ✅ Proper exportAll method returning ExportResult
-    public ExportResult exportAll(String baseFilename, Report report) throws Exception {
-        Path csv = fileService.exportCsv(baseFilename, report);
-        Path json = fileService.exportJson(baseFilename, report);
-        Path bin = fileService.exportBinary(baseFilename, report);
+    public ExportResult exportAll(String base, Report report) throws Exception {
+        Path csv = fileService.exportCsv(base, report);
+        Path json = fileService.exportJson(base, report);
+        Path bin = fileService.exportBinary(base, report);
 
         return new ExportResult(csv, json, bin);
     }
 
     // ✅ Record type to hold results
-    public record ExportResult(Path csv, Path json, Path bin) {}
+    public static record ExportResult(Path csv, Path json, Path bin) {}
 }

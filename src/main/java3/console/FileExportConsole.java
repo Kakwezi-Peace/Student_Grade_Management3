@@ -19,6 +19,7 @@ public class FileExportConsole {
     public void run(Scanner sc) {
         System.out.println("\nEXPORT GRADE REPORT (CSV/JSON/Binary)");
 
+        // Ask for student ID
         System.out.print("Enter Student ID: ");
         String id = sc.nextLine().trim();
 
@@ -28,6 +29,7 @@ public class FileExportConsole {
             return;
         }
 
+        // Ask for base filename
         System.out.print("Enter base filename (no extension): ");
         String base = sc.nextLine().trim();
         if (base.isEmpty()) {
@@ -35,9 +37,13 @@ public class FileExportConsole {
         }
 
         try {
+            // Build report for the student
             Report report = reportService.buildReport(student);
+
+            // Export report in all formats
             ReportService.ExportResult result = reportService.exportAll(base, report);
 
+            // Print results
             System.out.println("\n✓ Export completed:");
             System.out.println(" - CSV:  " + result.csv().toAbsolutePath());
             System.out.println(" - JSON: " + result.json().toAbsolutePath());

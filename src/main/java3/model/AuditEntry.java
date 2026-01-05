@@ -30,4 +30,10 @@ public class AuditEntry implements java.io.Serializable {
     public String getUserAction() { return userAction; }
     public long getExecutionMs() { return executionMs; }
     public boolean isSuccess() { return success; }
+
+    @Override
+    public String toString() {
+        return String.format("%s | %s | %s | %s | %dms | %s",
+                timestamp, threadId, operation, userAction, executionMs, success ? "SUCCESS" : "FAIL");
+    }
 }

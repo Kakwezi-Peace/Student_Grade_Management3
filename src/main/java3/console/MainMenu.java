@@ -37,6 +37,9 @@ public class MainMenu {
         System.out.println("  17. Cache Management                       [NEW]");
         System.out.println("  18. Audit Trail Viewer                     [NEW]");
         System.out.println();
+        System.out.println("STREAM ANALYTICS");
+        System.out.println("  20. Run Stream-Based Analytics             [NEW]");
+        System.out.println();
         System.out.println("  19. Exit");
         System.out.println();
         System.out.print("Enter choice: ");

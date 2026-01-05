@@ -1,9 +1,6 @@
 package concurrent;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 public final class ExecutorsConfig {
     private ExecutorsConfig() {}
@@ -17,11 +14,25 @@ public final class ExecutorsConfig {
     }
 
     public static ScheduledExecutorService scheduledPool(int threads) {
-        return Executors.newScheduledThreadPool(threads);
+        return Executors.newScheduledThreadPool(threads, r -> {
+            Thread t = new Thread(r, "scheduled-" + threads);
+            t.setDaemon(true);
+            return t;
+        });
     }
 
-    public static ThreadPoolExecutor fixedPool(int i) {
-
-        return null;
+    public static ThreadPoolExecutor fixedPool(int size) {
+        return new ThreadPoolExecutor(
+                size,
+                size,
+                60L, TimeUnit.SECONDS,
+                new LinkedBlockingQueue<>(),
+                r -> {
+                    Thread t = new Thread(r, "fixed-pool");
+                    t.setDaemon(true);
+                    return t;
+                },
+                new ThreadPoolExecutor.CallerRunsPolicy()
+        );
     }
 }

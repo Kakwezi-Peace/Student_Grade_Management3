@@ -16,6 +16,7 @@ public class AuditStats {
     }
 
     public long getTotalOps() { return totalOps.get(); }
+
     public double getAvgTimeMs() {
         long ops = totalOps.get();
         return ops == 0 ? 0.0 : totalTime.get() / (double) ops;

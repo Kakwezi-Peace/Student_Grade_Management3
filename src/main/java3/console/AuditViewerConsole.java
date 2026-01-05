@@ -20,12 +20,13 @@ public class AuditViewerConsole {
 
     public void run(Scanner sc) {
         Path dir = Path.of(Config.AUDIT_DIR);
-        System.out.println("\nAUDIT TRAIL VIEWER");
+        System.out.println("\n=== AUDIT TRAIL VIEWER ===");
         try {
             System.out.println("Available log files:");
             Files.createDirectories(dir);
             Files.list(dir)
                     .filter(p -> p.toString().endsWith(".log"))
+                    .sorted()
                     .forEach(p -> System.out.println(" - " + p.getFileName()));
         } catch (IOException e) {
             System.err.println("Error reading audit directory: " + e.getMessage());
@@ -40,14 +41,14 @@ public class AuditViewerConsole {
             return;
         }
 
-        System.out.println("\n--- Recent Audit Entries ---");
+        System.out.println("\n--- Recent Audit Entries (max 200) ---");
         try {
             Files.lines(file).limit(200).forEach(System.out::println);
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
 
-        System.out.println("\n--- Audit Statistics ---");
+        System.out.println("\n--- Audit Statistics (live) ---");
         AuditStats stats = auditService.getStats();
         System.out.printf("Total operations: %d%n", stats.getTotalOps());
         System.out.printf("Average exec time: %.2f ms%n", stats.getAvgTimeMs());

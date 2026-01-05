@@ -3,19 +3,19 @@ package service;
 import model.Student;
 
 import java.time.Instant;
-import java.util.Collection;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class StudentService {
     private final Map<String, Student> studentMap;
     private final AuditService auditService;
+    private final ThreadSafeCache cache;  // ✅ added cache
 
-    public StudentService(Map<String, Student> studentMap, AuditService auditService) {
+    public StudentService(Map<String, Student> studentMap, AuditService auditService, ThreadSafeCache cache) {
         this.studentMap = studentMap;
         this.auditService = auditService;
+        this.cache = cache;
     }
 
     public void addStudent(Student s) {
@@ -25,6 +25,9 @@ public class StudentService {
             if (!studentMap.containsKey(s.getId())) {
                 studentMap.put(s.getId(), s);
                 success = true;
+                // ✅ Invalidate caches
+                cache.invalidate("student:" + s.getId());
+                cache.invalidate("stats:global");
             }
         } finally {
             long end = System.currentTimeMillis();
@@ -41,11 +44,25 @@ public class StudentService {
     }
 
     public Student getById(String id) {
-        return studentMap.get(id);
+        Student cached = cache.get("student:" + id);
+        if (cached != null) return cached;
+
+        Student s = studentMap.get(id);
+        if (s != null) cache.put("student:" + id, s, 5 * 60 * 1000);
+        return s;
     }
 
     public Collection<Student> listAll() {
         return studentMap.values();
+    }
+
+    // Stream-friendly accessors
+    public Stream<Student> streamAll() {
+        return studentMap.values().stream();
+    }
+
+    public Stream<Student> parallelStreamAll() {
+        return studentMap.values().parallelStream();
     }
 
     // Advanced searches

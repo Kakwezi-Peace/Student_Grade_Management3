@@ -4,15 +4,83 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ee012b-25ed-42d2-954a-89ada7d3e5f3" name="Changes" comment="" />
+    <list default="true" id="20ee012b-25ed-42d2-954a-89ada7d3e5f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java3/config/CacheConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/console/BulkImportConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/console/CacheManagementConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/console/CacheViewerConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/console/CalculateGpaConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/console/ClassStatisticsConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/console/FileImportConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/console/StreamAnalyticsConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/model/CacheEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/service/CacheStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/service/GradeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java3/service/ThreadSafeCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/audit/AuditTrailTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cache/CacheManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/config/ConfigTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/integration/MenuIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/ReportTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/StudentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/AuditServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/GradeManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/ReportServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/audit/audit-2025-12-29.log" beforeDir="false" afterPath="$PROJECT_DIR$/reports/audit/audit-2025-12-29.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/collections/CollectionsRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/collections/CollectionsRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/concurrent/ExecutorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/concurrent/ExecutorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/console/AuditViewerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/console/AuditViewerConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/console/FileExportConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/console/FileExportConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/console/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/console/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/console/ScheduledTasksConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/console/ScheduledTasksConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/model/AuditEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/model/AuditEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/resources/reports/binary" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/resources/reports/binary" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/service/AuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/service/AuditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/service/AuditStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/service/AuditStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/service/GradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/service/GradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/service/SchedulerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/service/SchedulerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/service/StreamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/service/StreamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java3/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java3/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/collections/CollectionPerformanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/collections/CollectionPerformanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/concurrency/ConcurrencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/concurrency/ConcurrencyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/file/FileOperationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/file/FileOperationsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/regex/RegexValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/regex/RegexValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/streams/StreamProcessingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/streams/StreamProcessingTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Kakwezi-Peace&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Kakwezi-Peace/Student_Grade_Management3.git&quot;,
+    &quot;accountId&quot;: &quot;52faff31-4080-4cff-bb2c-e91767a282ba&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -24,6 +92,24 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.AuditServiceTest.executor": "Run",
+    "JUnit.AuditTrailTest.executor": "Run",
+    "JUnit.CacheManagerTest.executor": "Run",
+    "JUnit.CollectionPerformanceTest.executor": "Run",
+    "JUnit.ConcurrencyTest.executor": "Run",
+    "JUnit.ConfigTest.executor": "Run",
+    "JUnit.FileOperationsTest.executor": "Run",
+    "JUnit.GradeManagerTest.executor": "Run",
+    "JUnit.MenuIntegrationTest.executor": "Run",
+    "JUnit.RegexValidationTest.executor": "Run",
+    "JUnit.ReportServiceTest.executor": "Run",
+    "JUnit.ReportServiceTest.testGenerateReportObject.executor": "Run",
+    "JUnit.ReportServiceTest.testGenerateSummaryReport.executor": "Run",
+    "JUnit.ReportTest.executor": "Run",
+    "JUnit.StreamProcessingTest.executor": "Run",
+    "JUnit.StreamProcessingTest.testFilterHonorsStudents.executor": "Run",
+    "JUnit.StreamProcessingTest.testGroupByGradeRange.executor": "Run",
+    "JUnit.StudentTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -34,6 +120,84 @@
     "last_opened_file_path": "C:/Users/Amalitech/IdeaProjects/Student_Grade_Management3"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Student_Grade_Management" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuditTrailTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Student_Grade_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="audit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="audit" />
+      <option name="MAIN_CLASS_NAME" value="audit.AuditTrailTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CacheManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Student_Grade_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cache.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cache" />
+      <option name="MAIN_CLASS_NAME" value="cache.CacheManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CollectionPerformanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Student_Grade_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="collections.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="collections" />
+      <option name="MAIN_CLASS_NAME" value="collections.CollectionPerformanceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcurrencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Student_Grade_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="concurrency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="concurrency" />
+      <option name="MAIN_CLASS_NAME" value="concurrency.ConcurrencyTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AuditTrailTest" />
+        <item itemvalue="JUnit.CacheManagerTest" />
+        <item itemvalue="JUnit.CollectionPerformanceTest" />
+        <item itemvalue="JUnit.ConcurrencyTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="20ee012b-25ed-42d2-954a-89ada7d3e5f3" name="Changes" comment="" />
@@ -43,5 +207,26 @@
       <updated>1765821478841</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/service/GradeManagerTest.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/model/StudentTest.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/integration/MenuIntegrationTest.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

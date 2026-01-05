@@ -9,21 +9,33 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 
 import static java.nio.file.StandardOpenOption.APPEND;
 import static java.nio.file.StandardOpenOption.CREATE;
 
+/**
+ * Handles audit logging asynchronously.
+ */
 public class AuditService {
     private final ConcurrentLinkedQueue<AuditEntry> queue = new ConcurrentLinkedQueue<>();
     private final ExecutorService writer = ExecutorsConfig.singleWriter();
     private final AuditStats stats = new AuditStats();
 
-    public void logAsync(AuditEntry entry) {
-        queue.add(entry);
+    /**
+     * Logs an audit entry asynchronously.
+     *
+     * @param entry the audit entry to log
+     * @return a CompletableFuture that completes when the log is written
+     */
+    public CompletableFuture<Void> logAsync(AuditEntry entry) {
+        queue.add(Objects.requireNonNull(entry));
         stats.record(entry.getOperation(), entry.getExecutionMs());
-        writer.submit(this::drain);
+        // ✅ Return a CompletableFuture instead of void
+        return CompletableFuture.runAsync(this::drain, writer);
     }
 
     private void drain() {
@@ -31,7 +43,7 @@ public class AuditService {
         try { Files.createDirectories(dir); } catch (IOException ignored) {}
 
         Path file = dir.resolve("audit-" + LocalDate.now() + ".log");
-        // Rotation: if daily file exceeds threshold, create a new rotated file
+
         try {
             if (Files.exists(file) && Files.size(file) > Config.AUDIT_ROTATE_BYTES) {
                 file = dir.resolve("audit-" + LocalDate.now() + "-" + System.currentTimeMillis() + ".log");
